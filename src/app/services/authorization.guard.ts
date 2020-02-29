@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, InjectionToken } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -10,10 +10,12 @@ import { Observable } from 'rxjs';
 import { first, map, tap } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
+export const ALLOWED_ROLES = new InjectionToken('allowedRoles');
+
 @Injectable()
 export class AuthorizationGuard implements CanActivate {
   constructor(
-    @Inject('allowedRoles') private allowedRoles: string[],
+    @Inject(ALLOWED_ROLES) private allowedRoles: string[],
     private authService: AuthService,
     private router: Router
   ) {}
