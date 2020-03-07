@@ -1,13 +1,10 @@
-
 <div class="messages messages-error" *ngIf="errors?.length">
     <div class="messages-container">
-        <div *ngFor="let error of errors">{{messagePerErrorCode[error]}}</div>
+        <div *ngFor="let error of errors"> {{ messageToErrorCode[error] }}</div>
     </div>
 </div>
 
-
-
-<form autocomplete="off" novalidate  [formGroup]="form">
+<form autocomplete="off" novalidate [formGroup]="form">
 
     <fieldset>
         <legend>Sign Up</legend>
@@ -28,7 +25,7 @@
 
     <div class="form-buttons">
 
-        <button  class="button button-primary" (click)="signUp()">Sign Up</button>
+        <button class="button button-primary" (click)="signUp()">Sign Up</button>
 
     </div>
 
