@@ -8,10 +8,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-server": "./node_modules/.bin/ts-node ./server/server.ts",
+    "start-server": "ts-node ./server/server.ts",
     "start-server-secure": "npx start-server -- --secure",
-    "server": "./node_modules/.bin/nodemon -w ./server --ext \".ts\" --exec \"npm run start-server\"",
-    "server:debug": "npm run server -- --inspect",
+    "server": "nodemon -w ./server --ext \".ts\" --exec \"npm run start-server\"",
+    "server:debug": "nodemon --inspect ./server/server.ts",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -63,7 +63,7 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "nodemon": "^2.0.2",
     "protractor": "~5.4.3",
-    "ts-node": "~8.3.0",
+    "ts-node": "^8.6.2",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
   }
